@@ -50,10 +50,9 @@ df["Engajamento_PIGs"] = df["Engajamento_PIGs"].str.replace("%","",regex=False).
 
 # Ajeitando os nulos NaN
 media_engajamento = df["Engajamento_PIGs"].mean()
-df.loc[df["Engajamento_PIGs"].isna(), "Engajamento_PIGs"] = media_engajamento
+df.loc[df["Engajamento_PIGs"].isna(), "Engajamento_PIGs"] = (media_engajamento).round(2)
 
 # Bota o df arredondado dentro de uma variavel
-df["Engajamento_PIGs"] = df["Engajamento_PIGs"].round(2)
 engajamento = df["Engajamento_PIGs"]
 
 ### Coluna score###
